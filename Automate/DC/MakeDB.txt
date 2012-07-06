@@ -1,0 +1,10 @@
+Create Login vpx WITH PASSWORD = 'VMware1!'
+Go
+create Database vCenter
+Go
+create database VUM
+GO
+ALTER AUTHORIZATION ON DATABASE::vCenter TO vpx
+ALTER AUTHORIZATION ON DATABASE::VUM TO vpx
+ALTER AUTHORIZATION ON DATABASE::msdb TO vpx
+go

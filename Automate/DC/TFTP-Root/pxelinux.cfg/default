@@ -1,0 +1,59 @@
+menu title PXE Menu
+menu tabmsgrow 22
+menu cmdlinerow 22
+menu endrow 24
+
+menu color title 1;34;49 #eea0a0ff #cc333355 std
+menu color sel 7;37;40 #ff000000 #bb9999aa all
+menu color border 30;44 #ffffffff #00000000 std
+menu color pwdheader 31;47 #eeff1010 #20ffffff std
+menu color hotkey 35;40 #90ffff00 #00000000 std
+menu color hotsel 35;40 #90000000 #bb9999aa all
+menu color timeout_msg 35;40 #90ffffff #00000000 none
+menu color timeout 31;47 #eeff1010 #00000000 none
+
+prompt 0
+noescape 1
+timeout 300
+default pxelinux.cfg/vesamenu.c32
+
+label localboot
+	menu label Boot local hard disk
+	kernel pxelinux.cfg/chain.c32
+	append hd0 0
+
+label blank
+        menu label 
+
+label esx50
+	KERNEL /esxi50/mboot.c32
+	APPEND -c /esxi50/boot.cfg
+	MENU LABEL ESXi-5.0 Installer
+
+label blank
+        menu label ...ESXi 5.0 automated Builds
+
+label esx1-5
+	KERNEL /esxi50/mboot.c32
+	APPEND -c /esxi50/Besx1-5.cfg
+	MENU LABEL Host1 
+
+
+Label ESX2-5
+	KERNEL /esxi50/mboot.c32
+	APPEND -c /esxi50/Besx2-5.cfg	
+	MENU LABEL Host2 
+	
+
+label blank
+        menu label ...4.1 Automated Builds
+
+label esx1-4
+	kernel /ESXi41/mboot.c32
+	append /ESXi41/vmkboot.gz ks=nfs://192.168.199.7/mnt/LABVOL/Build/Automate/Hosts/esx1-4.cfg --- /ESXi41/vmkernel.gz --- /ESXi41/sys.vgz --- /ESXi41/cim.vgz --- /ESXi41/ienviron.vgz --- /ESXi41/install.vgz 
+	menu Label Host1 
+
+label esx2-4
+	kernel /ESX41/vmlinuz
+	append initrd=/ESX41/initrd.img debugLogToSerial=1 mem=512M ks=nfs:192.168.199.7:/mnt/LABVOL/Build/Automate/Hosts/esx2-4c.cfg 
+	menu Label Host2 
