@@ -105,7 +105,7 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>a:\Build.cmd</CommandLine>
+                    <CommandLine>a:\DCPhase1.cmd</CommandLine>
                     <Description>Phase One Installer</Description>
                     <Order>1</Order>
                     <RequiresUserInput>true</RequiresUserInput>
