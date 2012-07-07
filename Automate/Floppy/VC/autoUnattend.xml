@@ -142,7 +142,7 @@
             </UserAccounts>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>a:\VCBuild.cmd</CommandLine>
+                    <CommandLine>a:\VCPhase1.cmd</CommandLine>
                     <Description>vCentre Build</Description>
                     <Order>1</Order>
                     <RequiresUserInput>true</RequiresUserInput>

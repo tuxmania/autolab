@@ -1,8 +1,6 @@
 @echo off
-echo *************************
-echo *
 echo **
-echo * Connect to build share
+echo * Connect to build share \\192.168.199.7\Build
 net use B: \\192.168.199.7\Build >> c:\buildlog.txt
 type b:\automate\version.tct  >> c:\buildlog.txt
 echo *
