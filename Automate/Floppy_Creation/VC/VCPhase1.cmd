@@ -1,8 +1,8 @@
 @echo off
+type \\192.168.199.7\Build\Automate\version.txt  >> c:\buildlog.txt
 echo **
-echo * Connect to build share \\192.168.199.7\Build
+echo * Connexion au partage réseau "\\192.168.199.7\Build"
 net use B: \\192.168.199.7\Build >> c:\buildlog.txt
-type b:\automate\version.tct  >> c:\buildlog.txt
-echo *
-echo * Transfer to VCPhase2.cmd 
+echo **
+echo * Début de la phase 2, sans reboot 
 call b:\Automate\VC\VCPhase2.cmd
