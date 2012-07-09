@@ -1,0 +1,2 @@
+SHA1(Lab_Host1-disk1.vmdk)= 6c69e4331e1cec85f910e4bb680fb156f44ee2ab
+SHA1(Lab_Host1.ovf)= 098739959c12af23520e54d789f772ad98a8cb84
